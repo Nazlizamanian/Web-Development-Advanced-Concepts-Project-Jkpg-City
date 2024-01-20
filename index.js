@@ -33,20 +33,19 @@ app.get('/stores', (req, res) => {
 });
 
 app.get('/restaurants', (req, res)=>{
-    const { search } = req.query;
-    if (search) {
-        const storeIndex = stores.findIndex((row) => row.name === search);
 
-        if (storeIndex === -1) {
-            res.send('Store not found');
-        } else {
-            res.json(stores[storeIndex]);
+        console.log('No restaurants found');
+        const district = {};
+    
+        for (const store of stores) {
+            district[store.district] = true; // gets all the unique values, overwrites.
         }
-    } else {
-        res.json(stores);
-    }
+    
+        res.json(Object.keys(district));
+ 
+    
 
-})
+});
 
 
 //-----------------------DELETE-----------------------------------
