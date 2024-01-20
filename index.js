@@ -4,6 +4,7 @@ const port = 3000;
 
 const stores= require('./stores.json');
 
+
 //-----------------------GET-------------------------------------
 app.get('/', function (req, res) {
     const { storename } = req.query
@@ -32,19 +33,20 @@ app.get('/stores', (req, res) => {
     }
 });
 
-app.get('/restaurants', (req, res)=>{
 
-        console.log('No restaurants found');
-        const district = {};
+//-----------------------Stores?district=Öster-----------------------
+app.get('/stores', (req, res)=>{
+
+    const district = {};
     
         for (const store of stores) {
-            district[store.district] = true; // gets all the unique values, overwrites.
+            if(store.district==='Öster'){
+                district[store.district] = true; 
+            }
+               
         }
-    
         res.json(Object.keys(district));
- 
-    
-
+  
 });
 
 
@@ -75,4 +77,4 @@ express.json(),
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
-  });
+});
