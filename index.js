@@ -33,6 +33,13 @@ app.delete('/stores', (req, res)=>{
 });
 
 
+//-----------------------POST-----------------------------------
+app.post('/stores', 
+express.json(),
+(req,res)=> {
+    const {body } = req; 
+}); 
+
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
   });
