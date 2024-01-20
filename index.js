@@ -16,6 +16,22 @@ app.get('/', function (req, res) {
     }
   });
 
+app.get('/stores', (req, res) => {
+    const { search } = req.query;
+
+    if (search) {
+        const storeIndex = stores.findIndex((row) => row.name === search);
+
+        if (storeIndex === -1) {
+            res.send('Store not found');
+        } else {
+            res.json(stores[storeIndex]);
+        }
+    } else {
+        res.json(stores);
+    }
+});
+
 
 //-----------------------DELETE-----------------------------------
 app.delete('/stores', (req, res)=>{
