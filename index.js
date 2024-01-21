@@ -18,6 +18,11 @@ app.get('/', function (req, res) {
     }
   });
 
+app.get('/resturants', (req, res)=>{
+    res.json(stores);
+
+});
+
 app.get('/stores', (req, res) => {
     const { search } = req.query;
 
