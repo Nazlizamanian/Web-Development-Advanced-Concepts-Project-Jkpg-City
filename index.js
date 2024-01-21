@@ -5,7 +5,6 @@ const port = 3000;
 const stores= require('./stores.json');
 
 //////////////////////////////////////////////
-/////////////////////////////////bbbbbbbbbbbbbbbbbbbbbbbb
 //-----------------------GET-------------------------------------
 app.get('/', function (req, res) {
     const { storename } = req.query
