@@ -3,13 +3,8 @@ const app = express();
 const port = 3000;
 
 const stores= require('./stores.json');
-BroadcastChannel
 
-//////////////////////////////////////////////
-<<<<<<< HEAD
 
-=======
->>>>>>> 1dcd71702b0c170dbebfec03ce18a2984171eb5d
 //-----------------------GET-------------------------------------
 app.get('/', function (req, res) {
     const { storename } = req.query
