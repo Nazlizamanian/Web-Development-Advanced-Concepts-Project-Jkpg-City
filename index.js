@@ -6,6 +6,7 @@ const stores= require('./stores.json');
 BroadcastChannel
 
 //////////////////////////////////////////////
+/////////////////////////////////bbbbbbbbbbbbbbbbbbbbbbbb
 //-----------------------GET-------------------------------------
 app.get('/', function (req, res) {
     const { storename } = req.query
