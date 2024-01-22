@@ -3,10 +3,9 @@ const app = express();
 const port = 8080;
 
 const stores= require('./stores.json');
-BroadcastChannel
 
-//////////////////////////////////////////////
 
+//Routes ska ligga i view modeln. 
 //-----------------------GET-------------------------------------
 app.get('/', function (req, res) {
     const { storename } = req.query
