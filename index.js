@@ -42,15 +42,14 @@ app.get('/stores', (req, res) => {
 
 
 //-----------------------Stores?district=Öster-----------------------
-app.get('/stores', (req, res)=>{
+app.get('/districts', (req, res)=>{
 
     const district = {};
     
         for (const store of stores) {
             if(store.district==='Öster'){
                 district[store.district] = true; 
-            }
-               
+            }    
         }
         res.json(Object.keys(district));
   

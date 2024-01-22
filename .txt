@@ -1,1 +1,9 @@
 Documentation
+
+
+
+Ask tomorrow: 
+- Show a list of all venus should we only do the stores or should we do for resutrnats as well 
+- Should the database consist of 
+- Database should all of the stores/resturants separete table or could you do one table or seperate tables.
+- 
