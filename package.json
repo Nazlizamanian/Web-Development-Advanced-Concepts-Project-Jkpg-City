@@ -9,7 +9,9 @@
   "author": "Jelizabeth Venkova, Maria Garic, Nazli Zamanian",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "node": "^21.2.0"
+    "node": "^21.2.0",
+    "pg": "^8.11.3"
   }
 }
