@@ -4,14 +4,17 @@
   "description": "Group project made in the course Web Development - Advanced Concepts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:build": "docker build -t jkpgcity ."
   },
   "author": "Jelizabeth Venkova, Maria Garic, Nazli Zamanian",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "node": "^21.2.0",
     "pg": "^8.11.3"
+
   }
 }
