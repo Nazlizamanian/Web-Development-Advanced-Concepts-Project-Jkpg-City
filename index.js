@@ -1,85 +1,37 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = 3000;
+const ModelClass = require('./model/model.js');
 
-const stores= require('./stores.json');
+let Model = null;
+let model = new ModelClass(); 
 
 
-//Routes ska ligga i view modeln. 
+
+//Routes ska ligga i view modeln. flytta dom 
 //-----------------------GET-------------------------------------
-app.get('/', function (req, res) {
-    const { storename } = req.query
-    console.log(storename)
-    const index = stores.findIndex(store => store.name === storename)
-    if (index > -1) {
-      res.json(stores[index])
-    } else {
-      res.send('Store not found!')
-    }
-  });
-
-app.get('/resturants', (req, res)=>{
+app.get('/stores', async (req, res) => {
+    const stores=await Model.getAllStores();
     res.json(stores);
+    try{
+        const data = await pool.query('SELECT * FROM STORES');
+        console.log('Got the data')
+        console.log(data.rows)
 
-});
-
-app.get('/stores', (req, res) => {
-    const { search } = req.query;
-
-    if (search) {
-        const storeIndex = stores.findIndex((row) => row.name === search);
-
-        if (storeIndex === -1) {
-            res.send('Store not found');
-        } else {
-            res.json(stores[storeIndex]);
-        }
-    } else {
-        res.json(stores);
+    } catch(error){
+        console.log('Error msg: ', error.message)
+    } finally{
+        res.send(data.rows)
     }
-});
+})
 
+const setupServer = async () => {
+    Model = new ModelClass()
+   await Model.initDatabase();
+   
+    app.listen(3000, ()=>{
+    console.log(`server listening ${port}`);
+ })
+}
 
-//-----------------------Stores?district=Öster-----------------------
-app.get('/districts', (req, res)=>{
-
-    const district = {};
-    
-        for (const store of stores) {
-            if(store.district==='Öster'){
-                district[store.district] = true; 
-            }    
-        }
-        res.json(Object.keys(district));
-  
-});
-
-
-//-----------------------DELETE-----------------------------------
-app.delete('/stores', (req, res)=>{
-    const {search } = req.query;
-    const storeIndex = stores.findIndex((row)=>{
-
-    });
-
-    if(storeIndex== -1){
-        res.send(`Store not found`);
-    }
-    else{
-        stores.splice(storeIndex, 1);
-    }
-});
-
-
-//-----------------------POST-----------------------------------
-app.post('/stores', 
-express.json(),
-(req,res)=> {
-    const {body } = req; 
-}); 
-
-
-
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});
+setupServer();

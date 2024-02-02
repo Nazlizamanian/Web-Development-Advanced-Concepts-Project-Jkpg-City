@@ -6,3 +6,4 @@ class Controller {
         
     }
 }
+//validera data eller vart den ska hämta datan.
