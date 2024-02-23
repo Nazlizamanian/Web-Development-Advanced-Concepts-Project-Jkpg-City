@@ -1,9 +1,31 @@
 /*StyleSheet*/
 
 body{
-    font-size: 400px;
+    color:  black;
 
 }
+.head{
+    background-color: pink;
+}
+#mark{
+    background-color: black;
+    font-size: 30px;
+    color: white;
+}
 h1{
-    color: blueviolet;
+    text-align: center;
+    font-size: 10vw;
+    padding: 10px;
+
+}
+.head h2{
+    font-size: 5vw;
+    font-weight: 100;
+    text-align: center;
+}
+p{
+    padding: 10px;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.4em;
 }
