@@ -7,8 +7,14 @@ let Model = null;
 let model = new ModelClass(); 
 
 
+let p=__dirname+"/public"
+app.use(express.static(p))
 
+app.get('/public/', (req, res) => {
+    res.render('index.html');
+});
 //Routes ska ligga i view modeln. flytta dom 
+/*
 //-----------------------GET-------------------------------------
 app.get('/stores', async (req, res) => {
     const stores=await Model.getAllStores();
@@ -27,11 +33,14 @@ app.get('/stores', async (req, res) => {
 
 const setupServer = async () => {
     Model = new ModelClass()
-   await Model.initDatabase();
+    await Model.initDatabase();
    
     app.listen(3000, ()=>{
     console.log(`server listening ${port}`);
  })
-}
+}*/
 
-setupServer();
+app.listen(3000, ()=>{
+    console.log(`server listening ${port}`);
+ })
+//setupServer();
