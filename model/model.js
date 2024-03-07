@@ -15,6 +15,7 @@ class Model {
   //connects to the database
   async initDatabase() {
     await this.client.connect();
+   // await this.setup(storeJson);
   }
 
   async setup(storeJson) {
