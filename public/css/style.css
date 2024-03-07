@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: #555;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffff;
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  margin: 0 3rem 0 3rem;
+  position: relative;
+  border-bottom: 0.05rem solid #d3d3d3;
+}
+
+.logo {
+  height: 4rem;
+}
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #cba465;
+}
+
+.container {
+  width: 60rem;
+  margin-top: 10rem;
+  position: relative;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.7rem;
+}
+
+.container .overlay {
+  border-radius: 0.7rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: antiquewhite;
+  letter-spacing: 0.03rem;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.container .overlay:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.section-description {
+  padding: 5.2rem 0 9.6rem 0;
+}
+
+.description-box {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  gap: 9.6rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.hero-hero {
+  width: 100%;
+}
+.heading-primary,
+.heading-secondary {
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+.heading-primary {
+  font-size: 4.7rem;
+  font-weight: 550;
+  line-height: 1.05;
+  color: #000;
+  letter-spacing: -0.3px;
+  margin-bottom: 3.2rem;
+  margin-top: 15rem;
+}
+
+.top:link,
+.top:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+.top:hover,
+.top:active {
+  color: #cba465;
+  transition: all 0.3s;
+}
