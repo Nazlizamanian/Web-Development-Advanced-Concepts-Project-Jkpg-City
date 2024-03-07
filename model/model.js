@@ -5,7 +5,7 @@ class Model {
   constructor() {
     this.client = new Client({
       user: 'postgres',
-      host: process.env.DB_HOST || 'localhost',
+      host: DATABASE_HOST || 'localhost',
       database: 'postgres',
       password: '12345',
       port: 5432,

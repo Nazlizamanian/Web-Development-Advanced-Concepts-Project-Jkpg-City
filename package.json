@@ -4,10 +4,15 @@
   "description": "Group project made in the course Web Development - Advanced Concepts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docker:build": "docker build -t jkpgcity ."
-  },
-  "author": "Jelizabeth Venkova, Maria Garic, Nazli Zamanian",
+    
+      "k8s:start": "kubectl portforward svc/express-service 3000:3000 -n jkpgcity",
+    "docker:build": "docker build -t example2 . && docker tag example2 localhost:5000/example2",
+    "test": "echo \"Error: no test specified\" && exit 1"
+    }
+   
+ 
+  }, 
+  {"author": "Jelizabeth Venkova, Maria Garic, Nazli Zamanian",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
