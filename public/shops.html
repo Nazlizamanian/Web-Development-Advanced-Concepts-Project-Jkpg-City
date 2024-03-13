@@ -9,18 +9,19 @@
       href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
       rel="stylesheet"
     />
-    <title>jkpgcity</title>
-    <link rel="stylesheet" href="/public/css/style.css" />
-    <link rel="stylesheet" href="/public/css/general.css" />
-    <link rel="stylesheet" href="/public/css/queries.css" />
+    <title>Jkpgcity</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/style.css" />
+    
   </head>
   <body>
     <header class="header nav-open">
       <a href="#">
-        <img class="logo" src="/public/img/logo/logo-b.png" alt="jkpgcity logo" />
+        <img class="logo" src="img/logo/logo-b.png" alt="jkpgcity logo" />
       </a>
       <nav class="main-nav">
         <ul class="main-nav-list">
+          <li> <a class="main-nav-link" href="index.html">Home</a></li>
           <li><a class="main-nav-link" href="#">Discover</a></li>
           <li><a class="main-nav-link" href="#">Events</a></li>
           <li><a class="main-nav-link" href="#">Information</a></li>
@@ -32,57 +33,95 @@
     <section class="section-box">
       <div class="description-box">
         <div class="description-text-box">
-        <h1 class="heading-primary">Dive into the <a class="top" href="#"><i><b>top-rated</b></i></a> store locations<br> in <b>Jönköping</b><br> presented in our monthly rubrics.</h1>
+        <h1 class="heading-primary">Dive into the <a class="top" href="#"><i><b>top-rated</b></i></a><br> store locations<br> in <b>Jönköping</b><br> presented in our monthly rubrics.</h1>
        <section class="hero-hero">
-        <div class="container" id="byredo">
-        <img src="/public/img/byredo.png" alt="" />
+        <div class="project-grid">
+        <div class="project" id="byredo">
+        <img src="img/byredo.png" alt="" />
+        <p class="overlay">Check Out</p>
+      </div> 
+      <div class="project" id="apple">
+        <img src="img/apple.png" alt="" />
         <p class="overlay">Check Out</p>
       </div>
-      <div class="container" id="byredo">
-        <img src="/public/img/beauty_test_khiels1200x1200px-1.png.webp+" alt="" />
-        <p class="overlay">Check Out</p>
-      </div>
+    </div>
        </div>
     </div>
     <div class="description-text-box">
     </div>
     </section>
   </section>
+  <h3 id="title">List Of All Stores</h3>
+  <div id="stores-list" class="stores-container"></div>
+ 
+  <script src="start.js"></script>
   </main>
-  </body>
-=======
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/stylesheet.css">
-  <script src="start.js"></script>
-  <title>JONKOPING CITY Page</title>
-</head>
-<body>
-  <div class="head">
-    <marquee width="100%" id="mark">
-      TÄNDSTICKSOMRÅDET • STATIONEN • RÅDHUSPARKEN • HÖGSKOLAN • VÄSTER • ATOLLEN • ÖSTER • SPIRA • TÄNDSTICKSOMRÅDET • STATIONEN • RÅDHUSPARKEN • HÖGSKOLAN • VÄSTER • ATOLLEN • ÖSTER • SPIRA 
-    </marquee>
-    <h1>JONKPING CITY</h1>
-    <h2>List of all Stores</h2>
-    <p>
-      In the heart of Jönköping City, a bustling urban center, you'll discover a diverse 
-      array of establishments catering to a wide range of tastes and needs. From charming 
-      flea markets and curated second-hand stores brimming with hidden gems, to vibrant 
-      florists offering a burst of color, trendy shoe boutiques showcasing the latest styles, 
-      fashion outlets filled with chic clothing, and home decor stores presenting an array of 
-      interior design inspirations. Whether you're seeking a unique vintage find, the perfect 
-      floral arrangement, the latest footwear trends, stylish apparel, or decor to elevate your 
-      living space, Jönköping City's shopping scene promises a delightful and varied experience 
-      for all.
-    </p>
+  <!-- Footer -->
+  <section class="gallery">
+    <div class="container">
+      <h1 class="gallery__heading">Subscribe on our Instagram</h1>
+      <div class="gallery__wrapper">
+          <div class="gallery__item">
+              <img src="img/beach.png" alt="gallery-2" class="gallery__item-img">
+          </div>
+          <div class="gallery__item">
+              <img src="img/table.png" alt="gallery-3" class="gallery__item-img">
+          </div>
+          <div class="gallery__item">
+              <img src="img/restaurant.png" alt="gallery-4" class="gallery__item-img">
+          </div>
+      </div>
   </div>
-  <div id="dataContainer" class="data-container"></div>
- 
+</section>
 
-  <script src="start.js"></script>
-
- 
-</body>
+  <footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="footer__logo">
+              
+              <div class="header__logo footer__logo">
+                <div class="header__content-heading footer-text">
+              
+                    <img class="footer-logo" src="img/logo/logo-w.png">
+                </div>
+            </div>
+            
+            </div>
+            <nav class="footer__nav">
+                <ul class="footer__nav-list">
+                    <li class="footer__nav-item">
+                        <a href="#" class="footer__nav-link">All trips</a>
+                    </li>
+                    <li class="footer__nav-item">
+                        <a href="#" class="footer__nav-link">Our comand</a>
+                    </li>
+                    <li class="footer__nav-item">
+                        <a href="#" class="footer__nav-link">Reviews</a>
+                    </li>
+                    <li class="footer__nav-item">
+                        <a href="#" class="footer__nav-link">FAQ</a>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="footer__list">
+                <h3 class="footer__list-heading">Contacts</h3>
+                <li class="footer__list-item">
+                    <a href="https://www.instagram.com/jkpgcity/?hl=en" class="footer__list-link">Instagram</a>
+                </li>
+                <li class="footer__list-item">
+                    <a href="https://sv-se.facebook.com/jonkopingcity/" class="footer__list-link">Facebook</a>
+                </li>
+                <li class="footer__list-item">
+                    <a href="mailto:info@jkpgcity.se" class="footer__list-link">info@jkpgcity.se</a>
+                </li>
+                <li class="footer__list-item">
+                    <a href="Tel: +­46 36-16 40 74­ " class="footer__list-link">Tel: +­46 36-16 40 74</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </footer>
+  </body>
+   
 
 </html>

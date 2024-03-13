@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3030;
+const port = 3000;
 const ModelClass = require('./model/model.js');
 
 let model = null;
@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-// API endpoint to get all stores
+// To get all stores
 app.get('/api/data', async (req, res) => {
     try {
         const stores = await model.getAllStores();
@@ -24,15 +24,17 @@ app.get('/api/data', async (req, res) => {
 });
 
 // Route to get all stores
-app.get('/stores', async (req, res) => {
+/*app.get('/stores', async (req, res) => {
     try {
         const stores = await model.getAllStores();
-        res.json(stores);
+        res.send(stores);
     } catch (error) {
         console.error('Error fetching data:', error);
         res.status(500).send('Error fetching data');
     }
 });
+*/
+
 
 const setupServer = async () => {
     model = new ModelClass();
@@ -43,3 +45,6 @@ app.listen(port, async () => {
     await setupServer();
     console.log(`Server listening on port ${port}`);
 });
+
+
+

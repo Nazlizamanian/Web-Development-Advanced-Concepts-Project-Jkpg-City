@@ -6,7 +6,7 @@ app.get('/districts', (req, res)=>{
 
     const district = {};
     
-        for (const store of stores) {
+        for (const store of store) {
             if(store.district==='Öster'){
                 district[store.district] = true; 
             }    

@@ -1,38 +1,52 @@
-// script.js
+let body=document.body
+const source = "http://localhost:3000/api/data";
 
-async function fetchData() {
-    try {
-      const response = await fetch('/api/data');
-      const data = await response.json();
-  
-      const dataContainer = document.getElementById('dataContainer');
-      data.forEach(item => {
-        const div = document.createElement('div');
-        div.classList.add('data-item');
-  
-        const nameParagraph = document.createElement('p');
-        nameParagraph.classList.add('name');
-        nameParagraph.textContent = `${item.name}`;
-  
-        const urlParagraph = document.createElement('p');
-        urlParagraph.classList.add('url');
-        urlParagraph.innerHTML = `<strong>URL:</strong> <a href="${item.url}" target="_blank">${item.url}</a>`;
-  
-        const districtParagraph = document.createElement('p');
-        districtParagraph.classList.add('district');
-        districtParagraph.textContent = `District: ${item.district}`;
-  
-        div.appendChild(nameParagraph);
-        div.appendChild(urlParagraph);
-        div.appendChild(districtParagraph);
-  
-        dataContainer.appendChild(div);
-      });
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  }
-  
-  // Call fetchData when the page loads
-  document.addEventListener('DOMContentLoaded', fetchData);
-  
+fetch(source)
+  .then(response => response.json())
+  .then(stores => {
+    console.log(stores);
+    const storesList = document.getElementById("stores-list");
+    stores.forEach(store => {
+      const storeContainer = document.createElement("div");
+      storeContainer.classList.add("stores-list");
+      storeContainer.classList.add("store-container");
+
+
+      const storeName = document.createElement("h3");
+      storeName.classList.add("store-name");
+      storeName.textContent = store.name;
+
+
+      const storeUrl = document.createElement("a");
+      storeUrl.classList.add("store-url");
+
+      // Check if store URL is complete
+      let url = store.url;
+      if (!/^https?:\/\//i.test(url)) {
+        url = "https://" + url;
+      }
+
+      storeUrl.href = url;
+      storeUrl.innerHTML = `<strong>Visit Store</strong>`;
+
+      const storeDistrict = document.createElement("p");
+      storeDistrict.classList.add("store-district");
+      storeDistrict.innerHTML = `<strong>District:</strong>${store.district}`;
+
+      // ADD storeName and storeUrl to storeContainer TO EACH store
+      storeContainer.appendChild(storeName);
+      storeContainer.appendChild(storeUrl);
+      storeContainer.appendChild(storeDistrict);
+
+
+      // Append storeContainer to storesList
+      storesList.appendChild(storeContainer);
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
+
+
+
